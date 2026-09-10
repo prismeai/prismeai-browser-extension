@@ -1,0 +1,29 @@
+{
+  "manifest_version": 3,
+  "name": "Prisme.ai",
+  "version": "0.1.0",
+  "description": "Chat with a Prisme.ai agent that always knows the page you're on.",
+  "permissions": ["sidePanel", "storage", "tabs", "scripting"],
+  "host_permissions": ["<all_urls>"],
+  "storage": { "managed_schema": "schema.json" },
+  "background": { "service_worker": "background.js" },
+  "icons": {
+    "16": "icons/icon-16.png",
+    "32": "icons/icon-32.png",
+    "48": "icons/icon-48.png",
+    "128": "icons/icon-128.png"
+  },
+  "action": {
+    "default_title": "Prisme.ai",
+    "default_icon": {
+      "16": "icons/icon-16.png",
+      "32": "icons/icon-32.png",
+      "48": "icons/icon-48.png",
+      "128": "icons/icon-128.png"
+    }
+  },
+  "side_panel": { "default_path": "sidepanel.html" },
+  "content_scripts": [
+    { "matches": ["<all_urls>"], "js": ["content.js"], "run_at": "document_idle" }
+  ]
+}

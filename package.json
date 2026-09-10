@@ -1,0 +1,12 @@
+{
+  "name": "prismeai-browser-extension",
+  "version": "0.1.0",
+  "private": true,
+  "license": "MIT",
+  "description": "Chat with a Prisme.ai agent that always knows the page you're on.",
+  "scripts": {
+    "check": "node --check background.js && node --check content.js && node --check sidepanel.js",
+    "package": "mkdir -p dist && rm -f \"dist/prismeai-extension-$npm_package_version.zip\" && zip -r -X \"dist/prismeai-extension-$npm_package_version.zip\" manifest.json background.js content.js sidepanel.js sidepanel.html schema.json icons -x '*.DS_Store'",
+    "preview:notes": "echo 'Upload dist/*.zip to the store with visibility = Unlisted (preview). See STORE.md.'"
+  }
+}

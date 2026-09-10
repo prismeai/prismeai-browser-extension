@@ -1,0 +1,32 @@
+{
+  "type": "object",
+  "title": "Prisme.ai extension managed configuration",
+  "description": "Enterprise policy pushed via chrome.storage.managed. Any field set here overrides the user's config and locks the extension to the deployment.",
+  "properties": {
+    "instance": {
+      "title": "Platform URL",
+      "description": "Instance console origin, e.g. https://studio.your-company.com",
+      "type": "string"
+    },
+    "api": {
+      "title": "API URL",
+      "description": "Instance API base, e.g. https://api.your-company.com/v2",
+      "type": "string"
+    },
+    "agent": {
+      "title": "Agent ID",
+      "description": "Default agent the side panel connects to.",
+      "type": "string"
+    },
+    "org": {
+      "title": "Org slug",
+      "description": "Optional org slug for anonymous access scoping.",
+      "type": "string"
+    },
+    "toolsWorkspace": {
+      "title": "Browser tools workspace",
+      "description": "Slug of the workspace exposing client-side tools (e.g. slug:browser-mcp). Blank disables page actions.",
+      "type": "string"
+    }
+  }
+}
